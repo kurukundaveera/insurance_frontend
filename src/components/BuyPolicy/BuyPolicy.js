@@ -1,15 +1,20 @@
 import React,{Component} from 'react';
 import './BuyPolicy.css';
 import axios from 'axios';
+import config from '../../config.json';
 
 class BuyPolicy extends Component{
     constructor(props){
         super(props);
         this.state={
+            policyName:localStorage.getItem("policyName"),
+            policyMinAge:localStorage.getItem("policyMinAge"),
+            policyMaxAge:localStorage.getItem("policyMaxAge"),
             buyPolicy:{
+                policyId:localStorage.getItem("policyId"),
                 policyHolderName:'',
                 gender:'',
-                age:'',
+                birthDate:'',
                 mobileNumber:'',
                 city:'',
                 nomineeName:'',
@@ -29,17 +34,20 @@ class BuyPolicy extends Component{
   handleBuy = (e) => {
     e.preventDefault();
     const { buyPolicy } = this.state;    
-    axios.post('',buyPolicy).then((response)=>{
+    axios.post(config.url+'/buy',buyPolicy).then((response)=>{
         console.log(response);
+        alert(response.data.message)
+        this.props.history.push('/analysis');
     }).catch((error)=>{
-        console.log(error);
+        console.log(error.response.data.message);
+        alert(error.response.data.message)
     });
 
 }
     render(){
         return(
             <div>
-                <h3>BUY POLICY</h3>
+                <h3>{this.state.policyName}      Min  age:{this.state.policyMinAge}  max age:{this.state.policyMaxAge}</h3>
                 <div className="form1">
                 <div className="container">
                      <form >
@@ -64,10 +72,10 @@ class BuyPolicy extends Component{
                         </div>
                        <div className="row">
                             <div className="col-25">
-                                <label for="age">AGE:</label>
+                                <label for="age">DATE OF BIRTH:</label>
                              </div>
                             <div className="col-75">
-                                <input type="date" id="age" name="age" placeholder="please enter the Age.." onChange={this.handleChange}/>
+                                <input type="date" id="birthDate" name="birthDate" placeholder="please enter the date of birth.." onChange={this.handleChange}/>
                             </div>
                      </div>
                      <div className="row">
@@ -101,12 +109,12 @@ class BuyPolicy extends Component{
                              </div>
                              <div className="col-75">
                                 <select id="relationship" name="relationship" onChange={this.handleChange}>
-                                    <option value="relationship">MOTHER</option>
-                                    <option value="relationship">FATHER</option>
-                                    <option value="relationship">DAUGHTER</option>
-                                    <option value="relationship">SON</option>
-                                    <option value="relationship">WIFE</option>
-                                    <option value="relationship">HUSBAND</option>
+                                    <option value="mother">MOTHER</option>
+                                    <option value="father">FATHER</option>
+                                    <option value="daughter">DAUGHTER</option>
+                                    <option value="son">SON</option>
+                                    <option value="wife">WIFE</option>
+                                    <option value="husband">HUSBAND</option>
                                  </select>
                              </div>
                         </div>

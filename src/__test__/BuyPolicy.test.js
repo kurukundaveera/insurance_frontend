@@ -104,11 +104,11 @@ describe('When Controlled component is given', () => {
       });
       describe('When onChange event triggered on password field', () => {
         beforeEach(() => {
-          const age = wrapper.find('#age');
-          age.simulate('change', { target: {name:'age', value: '12/02/2023' } });
+          const birthDate = wrapper.find('#birthDate');
+          birthDate.simulate('change', { target: {name:'birthDate', value: '12/02/2023' } });
         })
         it('should have update the state', () => {
-          expect(wrapper.state().buyPolicy.age).toEqual('12/02/2023');
+          expect(wrapper.state().buyPolicy.birthDate).toEqual('12/02/2023');
         })
       });
       describe('When onChange event triggered on password field', () => {
@@ -149,39 +149,49 @@ describe('When Controlled component is given', () => {
       });
       describe('When submit button is clicked', () => {
         beforeEach(() => {
-          wrapper.find('#userName').simulate('change', { target: {name:'userName', value: 'divya' } });
-          wrapper.find('#password').simulate('change', { target: { name:'password',value: 'divya@123' } });
-    
+          wrapper.find('#policyHolderName').simulate('change', { target: {name:'policyHolderName', value: 'divya' } });
+          wrapper.find('#gender').simulate('change', { target: { name:'gender',value: 'female' } });
+          wrapper.find('#birthDate').simulate('change', { target: { name:'birthDate',value: '12/02/2023' } }); 
+          wrapper.find('#mobileNumber').simulate('change', { target: { name:'mobileNumber',value: '9876543211' } });
+          wrapper.find('#city').simulate('change', { target: { name:'city',value: 'banglore' } });
+          wrapper.find('#nomineeName').simulate('change', { target: { name:'nomineeName',value: 'vijaya' } });
+          wrapper.find('#relatioship').simulate('change', { target: { name:'relatioship',value: 'MOTHER' } });
           const fakeEvent = { preventDefault: () => console.log('preventDefault') };
           const submit = wrapper.find('#btn1');
           submit.simulate('click', fakeEvent);
         });
     
         it('should have excepted userName', () => {
-          expect(wrapper.state().loginData.userName).toEqual('divya');
+          expect(wrapper.state().buyPolicy.policyHolderName).toEqual('divya');
         });
     
         it('should have excepted Password', () => {
-          expect(wrapper.state().loginData.password).toEqual('divya@123');
+          expect(wrapper.state().buyPolicy.gender).toEqual('female');
         });
+        it('should have excepted Password', () => {
+            expect(wrapper.state().buyPolicy.birthDate).toEqual('12/02/2023');
+          });
+          it('should have excepted Password', () => {
+            expect(wrapper.state().buyPolicy.mobileNumber).toEqual('9876543211');
+          });
+          it('should have excepted Password', () => {
+            expect(wrapper.state().buyPolicy.city).toEqual('banglore');
+          });
+          it('should have excepted Password', () => {
+            expect(wrapper.state().buyPolicy.nomineeName).toEqual('vijaya');
+          });
+          it('should have excepted Password', () => {
+            expect(wrapper.state().buyPolicy.relatioship).toEqual('MOTHER');
+          });
       });
     describe('When first button is cliked', () => {
         it('should have called handle submit function', () => {
-          const comp = shallow(<Login />);
-          const spy = jest.spyOn(comp.instance(), 'handleLoginSubmit');
+          const comp = shallow(<BuyPolicy />);
+          const spy = jest.spyOn(comp.instance(), 'handleBuy');
           comp.instance().forceUpdate();
-          comp.find('#btn1').simulate('click');
+          comp.find('#btn3').simulate('click');
           expect(spy).toHaveBeenCalled();
         });
       });
-      describe('When first button is cliked', () => {
-        it('should have called handle submit function', () => {
-          const comp = shallow(<Login />);
-          const spy = jest.spyOn(comp.instance(), 'cancel');
-          comp.instance().forceUpdate();
-          comp.find('#btn2').simulate('click');
-          expect(spy).toHaveBeenCalled();
-        });
-      });
-     
+      
 });

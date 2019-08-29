@@ -31,6 +31,10 @@ interpolation: {
 escapeValue: false // not needed for react!!
 
 },
+backend: {
+    // loadPath: `${window.location.origin + window.location.pathname}/locales/{{lng}}/{{ns}}.json`
+     loadPath: `./locales/{{lng}}/{{ns}}.json`
+ },
 
 react: {
 

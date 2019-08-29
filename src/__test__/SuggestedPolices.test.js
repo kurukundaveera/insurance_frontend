@@ -1,11 +1,11 @@
 import React from 'react';
 import {shallow,mount} from 'enzyme';
-import ListOfPolicies from '../components/ListOfPolicies/ListOfPolicies';
+import SuggestedPolicies from '../components/ListOfPolicies/SuggestedPolicies';
 
 describe('When Controlled component is given', () => {
     let wrapper;
         beforeEach(() => {
-            wrapper = mount(<ListOfPolicies/>);
+            wrapper = mount(<SuggestedPolicies/>);
   });
 
     it('should render', () => {
@@ -27,33 +27,31 @@ describe('When Controlled component is given', () => {
     it('should render h1 tag',()=>{
         expect(wrapper.find('h5')).toHaveLength(1);
     })
-
+    describe('When first button is cliked', () => {
+        it('should have called cancel function', () => {
+          const comp = shallow(<SuggestedPolicies/>);
+          const spy = jest.spyOn(comp.instance(), 'handlePolicyDetails');
+          comp.instance().forceUpdate();
+          comp.find('#btn4').simulate('click');
+          expect(spy).toHaveBeenCalled();
+        });
+      });
    
       describe('When first button is cliked', () => {
         it('should have called cancel function', () => {
-          const comp = shallow(<ListOfPolicies/>);
-          const spy = jest.spyOn(comp.instance(), 'handlePolicyDetails');
-          comp.instance().forceUpdate();
-          comp.find('#btn1').simulate('click');
-          expect(spy).toHaveBeenCalled();
-        });
-      });
-      describe('When first button is cliked', () => {
-        it('should have called cancel function', () => {
-          const comp = shallow(<ListOfPolicies/>);
+          const comp = shallow(<SuggestedPolicies/>);
           const spy = jest.spyOn(comp.instance(), 'handleBuyPolicy');
           comp.instance().forceUpdate();
-          comp.find('#btn8').simulate('click');
+          comp.find('#btn5').simulate('click');
           expect(spy).toHaveBeenCalled();
         });
       });
-    
       describe('When first button is cliked', () => {
         it('should have called cancel function', () => {
-          const comp = shallow(<ListOfPolicies/>);
+          const comp = shallow(<SuggestedPolicies/>);
           const spy = jest.spyOn(comp.instance(), 'cancel');
           comp.instance().forceUpdate();
-          comp.find('#btn9').simulate('click');
+          comp.find('#btn5').simulate('click');
           expect(spy).toHaveBeenCalled();
         });
       });
@@ -81,7 +79,7 @@ describe('When Controlled component is given', () => {
           },
         ]
         beforeEach(()=>{
-          wrapper=shallow(<ListOfPolicies listPolices={listPolices} />)
+          wrapper=shallow(<SuggestedPolicies listPolices={listPolices} />)
         });
         it('should renderlist of accounts for a user',()=>{
           const table=wrapper.find('table');
@@ -93,7 +91,7 @@ describe('When Controlled component is given', () => {
       describe('when the account summary is empty',()=>{
        const emptyArray=[];
        beforeEach(()=>{
-         wrapper=shallow(<ListOfPolicies listPolices={emptyArray}/>);
+         wrapper=shallow(<SuggestedPolicies listPolices={emptyArray}/>);
        });
        it('should not display account row data',()=>{
          const table=wrapper.find('table');

@@ -1,4 +1,10 @@
 {
     "title":"HCL easyInsurance",
-    "dashboard":"DASHBOARD"
+    "dashboard":"DASHBOARD",
+    "list of policies":"LIST OF POLICIES",
+    "policy name":"POLICY NAME",
+    "policy minimum age":"POLICY MINIMUM AGE",
+    "policy maximum age":"PPOLICY MAXIMUM AGE",
+    "policy amount":"POLICY AMOUNT",
+    "action":"ACTION"
 }

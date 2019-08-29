@@ -2,8 +2,8 @@ import React ,{Component} from 'react';
 import './App.css';
 import {HashRouter,Route,Switch} from 'react-router-dom';
 import Header from './components/Header/Header';
-import ListOfPolices from './components/ListOfPolices/ListOfPolices';
-import SuggestedPolices from './components/ListOfPolices/SuggestedPolices';
+import ListOfPolicies from './components/ListOfPolices/ListOfPolicies';
+import SuggestedPolicies from './components/ListOfPolices/SuggestedPolices';
 import BuyPolicy from './components/BuyPolicy/BuyPolicy';
 
 
@@ -14,9 +14,9 @@ class App extends Component{
       <div className="App">
       <HashRouter>
         <Header/>
-        <Route path="/listOfPolices" component={ListOfPolices}/>
+        <Route path="/listOfPolicies" component={ListOfPolicies}/>
         <Route path="/buyPolicy" component={BuyPolicy}/>
-        <Route path="/suggestedPolices" component={SuggestedPolices}/>
+        <Route path="/suggestedPolicies" component={SuggestedPolicies}/>
       </HashRouter>
       </div>
     );

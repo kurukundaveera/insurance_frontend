@@ -28,7 +28,7 @@ handleSelect = (event) =>{
                     </ul>
                 </div>
                 <div className="header-right">
-                    <Link to='/listOfProducts'><img src={home} className="logo" height="50px" width="50px"/></Link>
+                    <Link to='/listOfPolicies'><img src={home} className="logo" height="50px" width="50px"/></Link>
                     <Link to='/analysis'><button className="btn btn-outline-primary"><b>DASHBOARD</b></button></Link>
                     {/* <Link to='/fileUpload'><button className="btn btn-outline-primary"><b> </b></button></Link> */}
               

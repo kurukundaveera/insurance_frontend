@@ -1,4 +1,10 @@
 {
     "title":"Seguro fácil de HCL",
-    "dashboard":"TABLERO"
+    "dashboard":"TABLERO",
+    "list of policies": "LISTA DE POLÍTICAS",
+    "policy name":"NOMBRE DE DIRECTIVA",
+    "policy minimum age":"POLÍTICA EDAD MÍNIMA",
+    "policy maximum age":"POLÍTICA EDAD MÁXIMA",
+    "policy amount":"POLÍTICA CANTIDAD",
+    "action":"ACCIÓN"
 }

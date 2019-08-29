@@ -1,0 +1,173 @@
+.App {
+    text-align: center;
+  }
+  
+  body { 
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  
+  .header-right {
+    float: right;
+    padding-right:50px;
+    margin-right:70px;
+  }
+  
+  
+  /* from here styling for dropdown on hover*/
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font: inherit;
+    margin: 0;
+  }
+  
+  
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content .header1 {
+    background: red;
+    padding: 16px;
+    color: black;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /*for top title*/
+  .main{
+    background-color: #ff6200;
+    height:100px;
+  }
+  
+  .titlespace{
+    padding-left:400px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  /* for aside section*/
+  section{
+   float:left;
+   width:20%;
+   height:500px;
+   margin-top:0px;
+    background-color: #333;
+  }
+  /*for side nav bars*/
+  #mySidenav a {
+    margin-top:200px;
+    float:left;
+   width:20%;
+    position: absolute;
+    left: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  #mySidenav a:hover {
+    left: 0;
+  }
+  
+  #about {
+    top: 20px;
+    background-color: #010154;
+  }
+  
+  #blog {
+    top: 80px;
+    background-color: #010154;
+  }
+  
+  #projects {
+    top: 140px;
+    background-color: #010154;
+  }
+  
+  #contact {
+    top: 200px;
+    background-color: #010154
+  }
+  /*table*/
+  .tablesize{
+    margin-left:100px;
+  }
+  /*for marquee tag*/
+  .slide{
+    background-color:#010154;
+    color:white
+  }
+  .title{
+    padding-top:20px;
+    color:white
+  }
+  /*button box*/
+  
+  .box{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 60%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    margin-left:100px;
+  }
+  
+  .selectDropDown{
+    padding-top:30px;
+    padding-left:400px;
+  }
+  
+  
